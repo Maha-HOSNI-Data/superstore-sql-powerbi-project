@@ -90,7 +90,6 @@ Un magasin de détail américain voyait ses ventes progresser d'année en année
 │   ├── processed/            # Cleaned and transformed data
 │   └── external/             # Reference data, lookup tables, third-party files
 │
-├── notebooks/                # Jupyter, R Markdown, or Colab notebooks
 │
 ├── scripts/                  # Reusable .py, .R, or .sh processing files
 │
@@ -109,55 +108,23 @@ Un magasin de détail américain voyait ses ventes progresser d'année en année
 └── README.md                 # You are here
 ```
 
-> ⚠️ *Delete folders you didn't use. An empty folder is worse than no folder.*
-> SQL-heavy projects: keep `queries/`. Analysis-only projects: keep `notebooks/`. Both? Keep both.
 
----
+## 5. Flux de données
 
-## 5. Data Workflow
-
-<!--
-  Show how data moved through your project - from source to output.
-  Every transformation decision should be traceable here.
-
-  WHAT GOOD LOOKS LIKE:
-  1. Source: "Monthly CSV exports pulled from the internal POS system.
-              Five files, one per region, covering Jan 2023–Jun 2024."
-  2. Ingestion: "Loaded into Python using pandas. Files concatenated into
-                 a single dataframe (approx. 340,000 rows)."
-  3. Cleaning: "Removed 1.2% of rows with null transaction IDs.
-                Standardised date formats across regional files.
-                Resolved product category naming inconsistencies (3 variants → 1)."
-  4. Transformation: "Created a returns_rate field at product-category level.
-                      Aggregated to weekly and regional grain for trend analysis."
-  5. Analysis: "Descriptive statistics, regional comparison, return rate
-                segmentation by product category."
-  6. Output: "Summary report (PDF), annotated notebook, processed CSV."
-
-  WHAT TO AVOID:
-  ❌ "Data was cleaned and analysed." (No chain. No decisions. No trust.)
--->
-
-```
-[Data Source(s)]
-      ↓
-[Ingestion / Collection Method]
-      ↓
-[Cleaning & Transformation]
-      ↓
-[Analysis / Modelling / Querying]
-      ↓
-[Output / Visualisation / Reporting]
+```mermaid
+flowchart TD
+    A[Fichier CSV Sample Superstore] --> B[Import dans MySQL]
+    B --> C[Nettoyage SQL]
+    C --> D[Power BI : modèle et mesures DAX]
+    D --> E[Dashboard 3 pages, insights, recommandations]
 ```
 
-1. **Source:** [Where did the data come from? Format, size, access method.]
-2. **Ingestion:** [How was it brought in?]
-3. **Cleaning:** [What issues did you find and fix?]
-4. **Transformation:** [What new fields, aggregations, or structures did you create?]
-5. **Analysis:** [What methods - statistical, visual, query-based, model-based?]
-6. **Output:** [What form do the results take?]
-
----
+1. **Source :** fichier CSV Sample Superstore, un jeu de données public et fictif de ventes (2014-2017).
+2. **Ingestion :** import du fichier dans une table MySQL, puis connexion de Power BI à la table nettoyée.
+3. **Nettoyage :** [écrivez ici ce que vous avez corrigé en SQL, par exemple : doublons, format des dates, valeurs manquantes].
+4. **Transformation :** création d'une table Calendrier, d'une colonne « Tranche remise » et de mesures DAX (marge, ventes et profit N-1, variations).
+5. **Analyse :** comparaison de 2017 avec 2016, marge par sous-catégorie et effet des remises sur le profit.
+6. **Résultat :** un dashboard Power BI de 3 pages, avec les insights et recommandations dans ce README.
 
 ## 6. Data Model & Schema
 
