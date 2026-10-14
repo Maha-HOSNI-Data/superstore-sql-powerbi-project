@@ -37,61 +37,24 @@
 
 ## 1. Project Overview
 
-<!--
-  Write 3–5 sentences in plain language.
-  Cover: context → problem → approach → outcome.
-  Read it out loud. If it sounds like a form - rewrite it.
+Un magasin de détail américain voyait ses ventes progresser d'année en année, sans savoir si cette croissance était réellement rentable. Ce projet analyse quatre ans de commandes (2014-2017) réparties sur quatre régions et trois catégories de produits, pour repérer où l'entreprise perd de l'argent et quel rôle jouent les remises. J'ai nettoyé les données en SQL, puis construit dans Power BI un dashboard de trois pages avec des mesures DAX pour comparer les années et isoler les produits déficitaires. L'analyse montre qu'en 2017 les ventes ont gagné 20,2 % mais le profit seulement 14,7 %, et que les ventes à plus de 40 % de remise ont fait perdre 0,12 M€, alors que Supplies, Bookcases et Tables vendent beaucoup sans dégager de marge.
 
-  WHAT GOOD LOOKS LIKE:
-  "A mid-size retail business was seeing inconsistent revenue across
-  its regional stores but couldn't identify the root cause. This project
-  explored 18 months of transaction data across five regions to determine
-  whether underperformance was driven by sales volume, pricing, or return
-  rates. The analysis revealed that one region's gap was almost entirely
-  explained by an unusually high return rate on a single product category -
-  a finding invisible in the company's top-level reporting."
+**Context:** Sample Superstore est un jeu de données fictif de ventes d'un magasin de détail américain. Il couvre 3 catégories de produits (Technology, Furniture, Office Supplies), 3 segments de clients et 4 régions, de 2014 à 2017.
 
-  WHAT TO AVOID:
-  "This project analyzes sales data to find trends and insights."
-  (Too vague. Could describe 10,000 projects. Describes none of them.)
--->
+**Problem Statement:** Les ventes progressent, mais l'entreprise est-elle réellement rentable ? Où perd-elle de l'argent, et quel est l'effet des remises ?
 
-**Context:** [The business, research, or personal situation that motivated this project.]
+**Approach:** J'ai nettoyé les données en SQL (MySQL), puis construit un dashboard Power BI de 3 pages (aperçu général, comparaison 2017 vs 2016, détail produit) avec des mesures DAX.
 
-**Problem Statement:** [The specific question or challenge you were addressing.]
+**Outcome:** En 2017, les ventes progressent de 20,2 % mais le profit de 14,7 % seulement, donc la marge recule de 0,6 point. Au-delà de 40 % de remise, le profit est de -0,12 M€, et Supplies, Bookcases et Tables vendent beaucoup mais ont une marge négative.
 
-**Approach:** [In 1–2 sentences - how did you tackle it?]
-
-**Outcome:** [What did you produce or discover?]
-
----
 
 ## 2. Objectives
 
-<!--
-  Write objectives that are specific enough to succeed or fail.
-  Use action-oriented verbs: Identify, Determine, Quantify, Build, Evaluate.
+- **Objectif principal :** Déterminer si la croissance des ventes de l'entreprise est réellement rentable et identifier où elle perd de l'argent.
+- **Objectif secondaire 1 :** Mesurer les performances globales (ventes, profit, marge) et repérer les régions, catégories et segments qui pèsent le plus.
+- **Objectif secondaire 2 :** Comparer 2017 à 2016 pour vérifier si la croissance s'accompagne d'une amélioration de la marge.
+- **Objectif secondaire 3 :** Identifier les sous-catégories déficitaires et mesurer l'effet des remises sur le profit.
 
-  WHAT GOOD LOOKS LIKE:
-  ✅ "Determine whether customer churn rate correlates with support ticket volume."
-  ✅ "Identify the top three revenue-driving product categories across all regions."
-  ✅ "Build a reproducible pipeline that ingests and cleans daily sales exports."
-
-  WHAT TO AVOID:
-  ❌ "Explore the data."
-  ❌ "Gain insights."
-  ❌ "Understand trends."
-  (These can't fail - which means they can't succeed either.)
--->
-
-- **Primary Objective:** [The main thing you set out to do]
-- **Secondary Objective 1:** [Supporting goal]
-- **Secondary Objective 2:** [Supporting goal]
-- **Secondary Objective 3:** [Remove if not applicable]
-
-> 💡 *Every analysis decision in this project traces back to one of these objectives.*
-
----
 
 ## 3. Project Scope & Tools
 
@@ -105,10 +68,7 @@
                  demographic data was incomplete for two regions, and marketing
                  data sits in a separate system outside this engagement."
 
-  WHAT TO AVOID:
-  ❌ Leaving Out of Scope blank. This is the section that protects your credibility.
-     If you don't define the fence, reviewers assume you missed things.
--->
+
 
 | Dimension | Details |
 |-----------|---------|
@@ -117,22 +77,22 @@
 | **Time Period** | [Date range of the data or the project itself] |
 | **Granularity** | [Unit of analysis - row-level, daily aggregates, per-user, etc.] |
 
-### Tools & Technologies
+### Outils & Téchnologies
 
 <!--
   List only what you actually used on this project.
   This is not your skills section - it's the project's technical context.
 -->
 
-| Category | Tool(s) Used |
+| Catégories | Outil(s) utilisé(s) |
 |----------|-------------|
-| Data Storage | [e.g., PostgreSQL, CSV files, BigQuery, S3] |
-| Data Processing | [e.g., Python, R, SQL, Excel, dbt] |
-| Analysis | [e.g., pandas, dplyr, custom SQL queries] |
-| Visualization | [e.g., Matplotlib, Tableau, Power BI, Looker] |
-| Version Control | [e.g., Git / GitHub] |
-| Documentation | [e.g., Markdown, Notion] |
-| Other | [Any additional tools] |
+| Data Storage | [ CSV files] |
+| Data Processing | [ SQL] |
+| Analysis | [SSMS SQL queries] |
+| Visualization | [ Power BI] |
+| Version Control | [ Git / GitHub] |
+| Documentation | [ Markdown, Notion] |
+
 
 ---
 
