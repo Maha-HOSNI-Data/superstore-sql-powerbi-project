@@ -60,41 +60,25 @@ Un magasin de détail américain voyait ses ventes progresser d'année en année
 
 ### Scope
 
-<!--
-  WHAT GOOD LOOKS LIKE:
-  In Scope: "Transaction-level data for Regions A–E, Jan 2023–Jun 2024.
-             Analysis covers revenue, return rates, and product category performance."
-  Out of Scope: "Customer demographics and marketing spend data were excluded -
-                 demographic data was incomplete for two regions, and marketing
-                 data sits in a separate system outside this engagement."
-
-
-
 | Dimension | Details |
 |-----------|---------|
-| **In Scope** | [What is included - data sources, time periods, segments] |
-| **Out of Scope** | [What you explicitly excluded - and a brief reason why] |
-| **Time Period** | [Date range of the data or the project itself] |
-| **Granularity** | [Unit of analysis - row-level, daily aggregates, per-user, etc.] |
+| **Dans le périmètre** | [Données au niveau des transactions pour les régions West, East, South et Central, de 2014 à 2017. L'analyse porte sur les ventes, le profit, la marge, la remise moyenne et la comparaison 2017 vs 2016, par catégorie, sous-catégorie et segment] |
+| **Hors périmètre** | [Les coûts de livraison, les prix d'achat et les retours produits sont exclus, car ils ne figurent pas dans le jeu de données. Les prévisions pour les années suivantes sont exclues, car elles dépassent l'objectif du projet] |
+| **Période** | [2014 à 2017, avec une comparaison de 2017 par rapport à 2016] |
+| **Granularité** | [Une ligne par produit commandé, agrégée ensuite par région, catégorie, sous-catégorie, segment et année] |
 
 ### Outils & Téchnologies
 
-<!--
-  List only what you actually used on this project.
-  This is not your skills section - it's the project's technical context.
--->
-
 | Catégories | Outil(s) utilisé(s) |
 |----------|-------------|
-| Data Storage | [ CSV files] |
-| Data Processing | [ SQL] |
-| Analysis | [SSMS SQL queries] |
-| Visualization | [ Power BI] |
-| Version Control | [ Git / GitHub] |
-| Documentation | [ Markdown, Notion] |
+| Source des données | Fichier CSV (Sample Superstore) |
+| Stockage | MySQL |
+| Traitement des données | SQL (MySQL Workbench) |
+| Analyse et calculs | DAX (Power BI) |
+| Visualisation | Power BI |
+| Gestion de versions | Git / GitHub |
+| Documentation | Markdown |
 
-
----
 
 ## 4. Repository Structure
 
