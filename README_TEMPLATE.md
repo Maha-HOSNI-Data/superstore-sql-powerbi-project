@@ -137,31 +137,39 @@ flowchart TD
   | return_flag    | boolean | Whether the transaction included a return | TRUE |
   | region_code    | string | Two-letter identifier for store region | "NE" |
 
-  WHAT TO AVOID:
-  ❌ Skipping this section because "the field names are self-explanatory."
-     They're not. Not to a reviewer. Not to you in six months.
-
-  📌 FOR SQL PROJECTS: If you have multiple tables, create one block per table.
-     Describe join keys and relationships here. Your ERD (Section 7) will
-     visualise what this section describes in text.
-
-  📌 FOR NON-SQL PROJECTS: Describe the shape of your dataset informally
-     if a formal schema doesn't apply. Even one paragraph is more helpful than nothing.
 -->
 
-### Dataset / Table: `[name]`
+### Ensemble de données / Table: `[[Sample_Superstore]]`
 
-| Field Name | Data Type | Description | Example Value |
+| Nom du champ | Type de données | Description | Exemple de valeur |
 |------------|-----------|-------------|---------------|
-| `[field_1]` | [string / int / date / float / boolean] | [What this field represents] | [Non-sensitive example] |
-| `[field_2]` | [string / int / date / float / boolean] | [What this field represents] | [Non-sensitive example] |
-| `[field_3]` | [string / int / date / float / boolean] | [What this field represents] | [Non-sensitive example] |
+| `[Row_ID]` | [string / int / date / float] | [What this field represents] | [Non-sensitive example] |
+| `[Order_ID]` | [string / int / date / float / boolean] | [What this field represents] | [Non-sensitive example] |
+| `[Order_Date]` | [date ] | [What this field represents] | [Non-sensitive example] |
+| `[Ship_Date]` | [ date ] | [What this field represents] | [Non-sensitive example] |
+| `[Ship_Mode]` | [string] | [What this field represents] | [Non-sensitive example] |
+| `[Customer_ID]` | [string / int / date / float / boolean] | [What this field represents] | [Non-sensitive example] |
+| `[Customer_Name]` | [string] | [What this field represents] | [Non-sensitive example] |
+| `[Segment]` | [string / int / date / float / boolean] | [What this field represents] | [Non-sensitive example] |
+| `[Country]` | [string] | [What this field represents] | [Non-sensitive example] |
+| `[City]` | [string ] | [What this field represents] | [Non-sensitive example] |
+| `[State]` | [string ] | [What this field represents] | [Non-sensitive example] |
+| `[Postal_Code]` | [string / int / date / float / boolean] | [What this field represents] | [Non-sensitive example] |
+| `[Region]` | [string] | [What this field represents] | [Non-sensitive example] |
+| `[Product_ID]` | [string / int / date / float / boolean] | [What this field represents] | [Non-sensitive example] |
+| `[Category]` | [string ] | [What this field represents] | [Non-sensitive example] |
+| `[Sub_Category]` | [string ] | [What this field represents] | [Non-sensitive example] |
+| `[Product_Name]` | [string] | [What this field represents] | [Non-sensitive example] |
+| `[Sales]` | [string / int / date / float / boolean] | [What this field represents] | [Non-sensitive example] |
+| `[Quantity]` | [string / int / date / float / boolean] | [What this field represents] | [Non-sensitive example] |
+| `[Discount]` | [string / int / date / float / boolean] | [What this field represents] | [Non-sensitive example] |
+| `[Profit]` | [string / int / date / float / boolean] | [What this field represents] | [Non-sensitive example] |
 
 > **Row count (approx.):** [X rows]
 > **Date range:** [Start] – [End]
-> **Key join / relationship:** [e.g., `orders.customer_id` → `customers.id`]
 
-*Add additional table blocks as needed for multi-table projects.*
+
+
 
 ---
 
