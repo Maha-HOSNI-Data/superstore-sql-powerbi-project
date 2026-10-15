@@ -143,28 +143,27 @@ flowchart TD
 
 | Nom du champ | Type de données | Description | Exemple de valeur |
 |------------|-----------|-------------|---------------|
-| `[Row_ID]` | [string / int / date / float] | [What this field represents] | [Non-sensitive example] |
-| `[Order_ID]` | [string / int / date / float / boolean] | [What this field represents] | [Non-sensitive example] |
-| `[Order_Date]` | [date ] | [What this field represents] | [Non-sensitive example] |
-| `[Ship_Date]` | [ date ] | [What this field represents] | [Non-sensitive example] |
-| `[Ship_Mode]` | [string] | [What this field represents] | [Non-sensitive example] |
-| `[Customer_ID]` | [string / int / date / float / boolean] | [What this field represents] | [Non-sensitive example] |
-| `[Customer_Name]` | [string] | [What this field represents] | [Non-sensitive example] |
-| `[Segment]` | [string / int / date / float / boolean] | [What this field represents] | [Non-sensitive example] |
-| `[Country]` | [string] | [What this field represents] | [Non-sensitive example] |
-| `[City]` | [string ] | [What this field represents] | [Non-sensitive example] |
-| `[State]` | [string ] | [What this field represents] | [Non-sensitive example] |
-| `[Postal_Code]` | [string / int / date / float / boolean] | [What this field represents] | [Non-sensitive example] |
-| `[Region]` | [string] | [What this field represents] | [Non-sensitive example] |
-| `[Product_ID]` | [string / int / date / float / boolean] | [What this field represents] | [Non-sensitive example] |
-| `[Category]` | [string ] | [What this field represents] | [Non-sensitive example] |
-| `[Sub_Category]` | [string ] | [What this field represents] | [Non-sensitive example] |
-| `[Product_Name]` | [string] | [What this field represents] | [Non-sensitive example] |
-| `[Sales]` | [string / int / date / float / boolean] | [What this field represents] | [Non-sensitive example] |
-| `[Quantity]` | [string / int / date / float / boolean] | [What this field represents] | [Non-sensitive example] |
-| `[Discount]` | [string / int / date / float / boolean] | [What this field represents] | [Non-sensitive example] |
-| `[Profit]` | [string / int / date / float / boolean] | [What this field represents] | [Non-sensitive example] |
-
+| `Row_ID` | Entier | Identifiant unique de chaque ligne | 1 |
+| `Order_ID` | Texte | Identifiant de la commande (répété sur chaque produit d'une même commande) | CA-2016-152156 |
+| `Order_Date` | Date | Date de la commande | 2016-11-08 |
+| `Ship_Date` | Date | Date d'expédition | 2016-11-11 |
+| `Ship_Mode` | Texte | Mode d'expédition | Second Class |
+| `Customer_ID` | Texte | Identifiant unique de chaque client | CG-12520 |
+| `Customer_Name` | Texte | Nom du client (données fictives) | Claire Gute |
+| `Segment` | Texte | Type de client : Consumer, Corporate ou Home Office | Consumer |
+| `Country` | Texte | Pays de résidence du client | United States |
+| `City` | Texte | Ville de résidence du client | Henderson |
+| `State` | Texte | État américain du client | Kentucky |
+| `Postal_Code` | Texte | Code postal du client | 42420 |
+| `Region` | Texte | Région : West, East, South ou Central | South |
+| `Product_ID` | Texte | Identifiant unique de chaque produit | FUR-BO-10001798 |
+| `Category` | Texte | Catégorie du produit : Technology, Furniture ou Office Supplies | Furniture |
+| `Sub_Category` | Texte | Sous-catégorie du produit (17 valeurs) | Bookcases |
+| `Product_Name` | Texte | Nom du produit | Bush Somerset Collection Bookcase |
+| `Sales` | Décimal | Montant des ventes de la ligne (€) | 261.96 |
+| `Quantity` | Entier | Quantité de produits commandés | 2 |
+| `Discount` | Décimal | Remise appliquée, de 0 à 1 (0,2 = 20 %) | 0 |
+| `Profit` | Décimal | Profit de la ligne (€), négatif en cas de vente à perte | 41.91 |
 > **Row count (approx.):** [X rows]
 > **Date range:** [Start] – [End]
 
