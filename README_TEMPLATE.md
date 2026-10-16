@@ -126,7 +126,7 @@ flowchart TD
 5. **Analyse :** comparaison de 2017 avec 2016, marge par sous-catégorie et effet des remises sur le profit.
 6. **Résultat :** un dashboard Power BI de 3 pages, avec les insights et recommandations dans ce README.
 
-## 6. Data Model & Schema
+## 6. Modèle de données et schéma
 
 <!--
   Define your fields so that someone reading your analysis can follow along
