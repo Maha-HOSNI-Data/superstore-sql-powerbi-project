@@ -283,26 +283,32 @@ erDiagram
      the implementation in the code.
 -->
 
-### Analytical Approach
+### Approche analytique
 
 [Describe how you approached the analysis. Were you exploring patterns? Testing a hypothesis? Building and validating a pipeline? Be honest about your method - exploratory work is valid, just call it that.]
 
-### Key Metrics Defined
+Mon approche a d'abord été exploratoire, puis elle s'est concentrée sur une hypothèse précise.
+J'ai commencé par parcourir le jeu de données pour en vérifier la qualité (valeurs manquantes, doublons, anomalies) et chercher de premières tendances à l'aide de graphiques. Cette phase m'a conduit à comparer 2017 avec 2016, puis à regarder la répartition des ventes et du profit par catégorie, par région et par segment.
 
-| Metric | Plain-Language Definition | Why It Matters |
+J'ai ensuite voulu vérifier une hypothèse : les remises élevées font-elles passer certaines ventes en perte ? Pour cela, j'ai regroupé les remises en tranches (0 %, 1-20 %, 21-40 %, plus de 40 %) et comparé le profit de chaque tranche, puis la marge et la remise moyenne par sous-catégorie. Cette vérification est visuelle et descriptive : elle met en évidence des corrélations, sans test statistique.
+
+### Définition des indicateurs clés
+
+| Indicateur | Définition | Pourquoi il compte |
 |--------|--------------------------|----------------|
-| `[Metric 1]` | [What it measures, in one sentence] | [What decision or question it answers] |
-| `[Metric 2]` | [What it measures, in one sentence] | [What decision or question it answers] |
-| `[Metric 3]` | [What it measures, in one sentence] | [What decision or question it answers] |
+| Marge | le profit total divisé par le total des ventes  | Part de chaque euro vendu qui devient du profit |
+| Lignes à perte | Part des lignes de commande à profit négatif | Mesure la fréquence des ventes à perte  |
+| Remise moyenne | Taux de remise moyen, global et par sous-catégorie | Une remise trop forte réduit directement le profit |
 
-### Methods Used
+### Méthodes utilisés
 
-- [e.g., Descriptive statistics - distribution, central tendency, outlier detection]
-- [e.g., Trend analysis across [time period]]
-- [e.g., Segmentation / group comparison by [dimension]]
-- [e.g., Correlation analysis between [variable A] and [variable B]]
-- [e.g., SQL window functions for [specific aggregation]]
-- [e.g., Custom aggregation or transformation logic in [tool]]
+- **Statistiques descriptives** : sommes, moyennes et décomptes (ventes, profit, remise moyenne, nombre de commandes et de clients), et ratios dérivés comme la marge et la part de lignes à perte.
+- **Analyse de tendance** : évolution annuelle des ventes et du profit de 2014 à 2017, présentée en courbes.
+- **Comparaison N-1** : variation des ventes, du profit et de la marge entre 2017 et 2016, avec les fonctions de temps de DAX (SAMEPERIODLASTYEAR).
+- **Comparaison de groupes** : ventes et profit par catégorie, région, segment et sous-catégorie, présentés en histogrammes et en tableau.
+- **Regroupement en tranches** : remises classées en 4 tranches (0 %, 1-20 %, 21-40 %, plus de 40 %) pour comparer le profit de chacune.
+- **Lecture visuelle d'une relation** : nuage de points de la remise moyenne contre la marge par sous-catégorie. Je n'ai pas calculé de coefficient de corrélation, donc je parle de tendance observée.
+- **Nettoyage et transformation en SQL** : préparation de la table `Sample_Superstore_clean` avant le chargement dans Power BI.
 
 ---
 
