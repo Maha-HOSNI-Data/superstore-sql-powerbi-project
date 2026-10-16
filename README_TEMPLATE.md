@@ -221,25 +221,33 @@ Table products {
 ### Option C - Mermaid Diagram *(renders on GitHub)*
 ```mermaid
 erDiagram
-    ORDERS {
-        int order_id PK
-        int customer_id FK
-        int product_id FK
-        date order_date
-        float amount
+
+    CALENDAR {
+        date Date PK
+        int Year
+        int Month
     }
-    CUSTOMERS {
-        int customer_id PK
-        string region_code
-        date signup_date
+
+    SAMPLE_SUPERSTORE_CLEAN {
+        int Row_ID PK
+        string Order_ID
+        date Order_Date FK
+        date Ship_Date
+        string Ship_Mode
+        string Customer_ID
+        string Segment
+        string Region
+        string Product_ID
+        string Category
+        string Sub_Category
+        float Sales
+        int Quantity
+        float Discount
+        float Profit
+        string Tranche_remise
     }
-    PRODUCTS {
-        int product_id PK
-        string category
-        float unit_price
-    }
-    ORDERS ||--o{ CUSTOMERS : "placed by"
-    ORDERS ||--o{ PRODUCTS : "contains"
+    CALENDAR  ||--o{ SAMPLE_SUPERSTORE_CLEAN 
+   
 ```
 
 ---
@@ -248,9 +256,8 @@ erDiagram
 
 | Relationship | Join Key | Type |
 |-------------|----------|------|
-| `orders` → `customers` | `customer_id` | Many-to-One |
-| `orders` → `products` | `product_id` | Many-to-One |
-| [Add rows as needed] | | |
+| `CALENDAR` → `SAMPLE_SUPERSTORE_CLEAN` | `date Date` | One-to-Many |
+
 
 ---
 
