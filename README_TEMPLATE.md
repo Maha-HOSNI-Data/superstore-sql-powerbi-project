@@ -250,7 +250,7 @@ erDiagram
     }
 ---
 ---
-
+---
 **Table Relationships Summary:**
 
 | Relationship | Join Key | Type |
