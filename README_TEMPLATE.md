@@ -8,20 +8,20 @@
 ---
 
 ## Table of Contents
-1. [Project Overview](#1-project-overview)
+1. [Présentation du projet](#1-project-overview)
 2. [Objectives](#2-objectives)
 3. [Project Scope & Tools](#3-project-scope--tools)
 4. [Repository Structure](#4-repository-structure)
-5. [Data Workflow](#5-data-workflow)
-6. [Data Model & Schema](#6-data-model--schema)
+5. [Flux de données](#5-data-workflow)
+6. [Modèle de données et schéma](#6-data-model--schema)
 7. [ERD - Entity Relationship Diagram](#7-erd--entity-relationship-diagram) *(SQL projects)*
-8. [Analysis & Metrics](#8-analysis--metrics)
+8. [Analyse et indicateurs](#8-analysis--metrics)
 9. [Key Insights](#9-key-insights)
-10. [Recommendations](#10-recommendations)
-11. [Assumptions & Limitations](#11-assumptions--limitations)
-12. [Future Enhancements](#12-future-enhancements)
+10. [Recommandations](#10-recommendations)
+11. [Hypothèses et limites](#11-assumptions--limitations)
+12. [Pistes d'analyse complémentaires)
 13. [Deliverables](#13-deliverables)
-14. [Author](#14-author)
+14. [Auteur](#14-author)
 
 ---
 
@@ -129,7 +129,7 @@ flowchart TD
 
 -->
 
-### Ensemble de données / Table: `[[Sample_Superstore]]`
+### Ensemble de données / Table: `[Sample_Superstore]`
 
 | Nom du champ | Type de données | Description | Exemple de valeur |
 |------------|-----------|-------------|---------------|
@@ -333,7 +333,7 @@ Au-delà de 40 % de remise, le profit est de -0,12 M€ : les fortes remises dé
 
 ---
 
-## 10. Recommendations
+## 10. Recommandations
 
 <!--
   Action-oriented. Addressed to a real audience.
@@ -422,14 +422,14 @@ Sample Superstore est un jeu de données public et fictif : les résultats ne re
 
 ---
 
-## 14. Author
+## 14. Auteur
 
-**[Your Name]**
-[Your role or title - current or target]
+**[Maha HOSNI]**
+Data analyst junior
 
-- 🔗 [LinkedIn URL]
+
 - 💼 [Portfolio or GitHub profile URL]
-- 📧 [Email - optional]
+- 📧 mahamh.hosni@gmail.com
 
 ---
 
