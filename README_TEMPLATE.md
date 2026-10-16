@@ -8,20 +8,20 @@
 ---
 
 ## Table des matières
-1. [Présentation du projet](#1-project-overview)
+1. [Présentation du projet](#1-présentation-du-projet)
 2. [Objectives](#2-objectives)
-3. [Project Scope & Tools](#3-project-scope--tools)
-4. [Repository Structure](#4-repository-structure)
-5. [Flux de données](#5-data-workflow)
-6. [Modèle de données et schéma](#6-data-model--schema)
+3. [Portée du projet et outils](#3-project-scope--tools)
+4. [Structure du dépôt](#4-structure-du-dépôt)
+5. [Flux de données](#5-flux-de-données)
+6. [Modèle de données et schéma](#6-modèle-de-données-et-schéma)
 7. [ERD - Entity Relationship Diagram](#7-erd--entity-relationship-diagram) *(SQL projects)*
-8. [Analyse et indicateurs](#8-analysis--metrics)
-9. [Key Insights](#9-key-insights)
-10. [Recommandations](#10-recommendations)
-11. [Hypothèses et limites](#11-assumptions--limitations)
-12. [Pistes d'analyse complémentaires)
-13. [Deliverables](#13-deliverables)
-14. [Auteur](#14-author)
+8. [Analyse et indicateurs](#8-analyse--et-indicateurs)
+9. [Points clés](#9-points-clés)
+10. [Recommandations](#10-recommandations)
+11. [Hypothèses et limites](#11-hypothèses--et-limites)
+12. [Pistes d'analyse complémentaires)](#12-pistes--d'analyse-complémentaires)
+13. [Deliverables](#13-livrables)
+14. [Auteur](#14-auteur)
 
 ---
 
