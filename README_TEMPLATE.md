@@ -9,7 +9,7 @@
 
 ## Table des matières
 1. [Présentation du projet](#1-présentation-du-projet)
-2. [Objectives](#2-objectives)
+2. [Objectifs](#2-objectifs)
 3. [Portée du projet et outils](#3-project-scope--tools)
 4. [Structure du dépôt](#4-structure-du-dépôt)
 5. [Flux de données](#5-flux-de-données)
@@ -29,13 +29,13 @@
 
 Un magasin de détail américain voyait ses ventes progresser d'année en année, sans savoir si cette croissance était réellement rentable. Ce projet analyse quatre ans de commandes (2014-2017) réparties sur quatre régions et trois catégories de produits, pour repérer où l'entreprise perd de l'argent et quel rôle jouent les remises. J'ai nettoyé les données en SQL, puis construit dans Power BI un dashboard de trois pages avec des mesures DAX pour comparer les années et isoler les produits déficitaires. L'analyse montre qu'en 2017 les ventes ont gagné 20,2 % mais le profit seulement 14,7 %, et que les ventes à plus de 40 % de remise ont fait perdre 0,12 M€, alors que Supplies, Bookcases et Tables vendent beaucoup sans dégager de marge.
 
-**Context:** Sample Superstore est un jeu de données fictif de ventes d'un magasin de détail américain. Il couvre 3 catégories de produits (Technology, Furniture, Office Supplies), 3 segments de clients et 4 régions, de 2014 à 2017.
+**Contexte:** Sample Superstore est un jeu de données fictif de ventes d'un magasin de détail américain. Il couvre 3 catégories de produits (Technology, Furniture, Office Supplies), 3 segments de clients et 4 régions, de 2014 à 2017.
 
-**Problem Statement:** Les ventes progressent, mais l'entreprise est-elle réellement rentable ? Où perd-elle de l'argent, et quel est l'effet des remises ?
+**Présentation du problème:** Les ventes progressent, mais l'entreprise est-elle réellement rentable ? Où perd-elle de l'argent, et quel est l'effet des remises ?
 
-**Approach:** J'ai nettoyé les données en SQL (MySQL), puis construit un dashboard Power BI de 3 pages (aperçu général, comparaison 2017 vs 2016, détail produit) avec des mesures DAX.
+**Approche:** J'ai nettoyé les données en SQL (MySQL), puis construit un dashboard Power BI de 3 pages (aperçu général, comparaison 2017 vs 2016, détail produit) avec des mesures DAX.
 
-**Outcome:** En 2017, les ventes progressent de 20,2 % mais le profit de 14,7 % seulement, donc la marge recule de 0,6 point. Au-delà de 40 % de remise, le profit est de -0,12 M€, et Supplies, Bookcases et Tables vendent beaucoup mais ont une marge négative.
+**Résultats:** En 2017, les ventes progressent de 20,2 % mais le profit de 14,7 % seulement, donc la marge recule de 0,6 point. Au-delà de 40 % de remise, le profit est de -0,12 M€, et Supplies, Bookcases et Tables vendent beaucoup mais ont une marge négative.
 
 
 ## 2. Objectives
@@ -46,9 +46,9 @@ Un magasin de détail américain voyait ses ventes progresser d'année en année
 - **Objectif secondaire 3 :** Identifier les sous-catégories déficitaires et mesurer l'effet des remises sur le profit.
 
 
-## 3. Project Scope & Tools
+## 3. Portée du projet et outils
 
-### Scope
+### Portée du projet
 
 | Dimension | Details |
 |-----------|---------|
@@ -70,7 +70,7 @@ Un magasin de détail américain voyait ses ventes progresser d'année en année
 | Documentation | Markdown |
 
 
-## 4. Repository Structure
+## 4. Structure du dépôt
 
 ```
 [project-root]/
