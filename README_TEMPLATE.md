@@ -264,7 +264,7 @@ erDiagram
 
 ---
 
-## 8. Analysis & Metrics
+## 8. Analyse et indicateurs
 
 <!--
   Explain what you measured and how - before you share what you found.
