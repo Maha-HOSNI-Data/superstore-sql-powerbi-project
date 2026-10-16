@@ -222,6 +222,8 @@ Table products {
 ```mermaid
 erDiagram
 
+    CALENDAR ||--o{ SAMPLE_SUPERSTORE_CLEAN : "Date = Order_Date"
+
     CALENDAR {
         date Date PK
         int Year
@@ -246,10 +248,6 @@ erDiagram
         float Profit
         string Tranche_remise
     }
-    CALENDAR  ||--o{ SAMPLE_SUPERSTORE_CLEAN 
-   
-```
-
 ---
 
 **Table Relationships Summary:**
