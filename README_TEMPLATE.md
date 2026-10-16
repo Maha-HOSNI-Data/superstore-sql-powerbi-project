@@ -221,8 +221,7 @@ Table products {
 ### Option C - Mermaid Diagram *(renders on GitHub)*
 ```mermaid
 erDiagram
-
-    CALENDAR ||--o{ SAMPLE_SUPERSTORE_CLEAN : "Date = date Order_Date"
+    CALENDAR ||--o{ SAMPLE_SUPERSTORE_CLEAN : "Date = Order_Date"
 
     CALENDAR {
         date Date PK
@@ -230,7 +229,7 @@ erDiagram
         int Month
     }
 
-    SAMPLE_SUPERSTORE {
+    SAMPLE_SUPERSTORE_CLEAN {
         int Row_ID PK
         string Order_ID
         date Order_Date FK
@@ -248,9 +247,7 @@ erDiagram
         float Profit
         string Tranche_remise
     }
----
----
----
+```
 **Table Relationships Summary:**
 
 | Relationship | Join Key | Type |
