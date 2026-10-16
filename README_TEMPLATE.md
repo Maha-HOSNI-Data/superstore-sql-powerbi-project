@@ -387,7 +387,7 @@ Au-delà de 40 % de remise, le profit est de -0,12 M€ : les fortes remises dé
 ### Limites
 Sample Superstore est un jeu de données public et fictif : les résultats ne reflètent pas une entreprise réelle. L'analyse met en évidence des corrélations et non des causalités, car les coûts, la livraison et les prix ne figurent pas dans les données. Les données sont statiques, sans actualisation automatique.
 
-> *The goal here is pre-emptive Q&A. What would a thoughtful skeptic push back on? Document the answer here, before they ask.*
+
 
 ---
 
