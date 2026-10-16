@@ -249,6 +249,7 @@ erDiagram
         string Tranche_remise
     }
 ---
+---
 
 **Table Relationships Summary:**
 
