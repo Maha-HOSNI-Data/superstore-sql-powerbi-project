@@ -7,7 +7,7 @@
 > Analyse SQL et Power BI du jeu de données Sample Superstore (2014-2017)
 ---
 
-## Table of Contents
+## Table des matières
 1. [Présentation du projet](#1-project-overview)
 2. [Objectives](#2-objectives)
 3. [Project Scope & Tools](#3-project-scope--tools)
