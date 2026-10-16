@@ -284,9 +284,9 @@ erDiagram
 -->
 
 ### Approche analytique
-
+<!--
 [Describe how you approached the analysis. Were you exploring patterns? Testing a hypothesis? Building and validating a pipeline? Be honest about your method - exploratory work is valid, just call it that.]
-
+-->
 Mon approche a d'abord été exploratoire, puis elle s'est concentrée sur une hypothèse précise.
 J'ai commencé par parcourir le jeu de données pour en vérifier la qualité (valeurs manquantes, doublons, anomalies) et chercher de premières tendances à l'aide de graphiques. Cette phase m'a conduit à comparer 2017 avec 2016, puis à regarder la répartition des ventes et du profit par catégorie, par région et par segment.
 
@@ -312,7 +312,7 @@ J'ai ensuite voulu vérifier une hypothèse : les remises élevées font-elles p
 
 ---
 
-## 9. Key Insights
+## 9. Points clés
 
 <!--
   Findings + implications. Not just what happened - what it means.
@@ -332,17 +332,14 @@ J'ai ensuite voulu vérifier une hypothèse : les remises élevées font-elles p
   Aim for 3–6 insights. Quality over quantity.
 -->
 
-**Insight 1: [Short descriptive headline]**
-[What you found + what it suggests. One short paragraph.]
+**Point de vue n° 1: [Aperçu général (2014-2017)]**
+La région West génère le profit le plus élevé (108,4 K€) et réalise les ventes les plus élevées (725,5 K€), alors que Central affiche le profit le plus faible (environ 40 K€) et South les ventes les plus faibles (391,0 K€). Les résultats sont donc très inégaux d'une région à l'autre, et les marges plus faibles de Central et South invitent à les surveiller de près. Du côté des produits, Technology réalise le profit le plus élevé (145,5 K€), devant Office Supplies (122,5 K€) et Furniture (18,9 K€), alors que les ventes des trois catégories restent proches (0,72 à 0,84 M€). Furniture semble donc la catégorie la moins rentable. Le segment Consumer pèse le plus en ventes (1,16 M€), devant Corporate (0,71 M€) et Home Office (0,43 M€), ce qui rend l'activité dépendante des particuliers. Enfin, le profit annuel passe de 49,5 K€ en 2014 à 93,9 K€ en 2017 : la tendance est positive, mais il faut vérifier que la marge progresse aussi, ce que montre la page suivante.
 
-**Insight 2: [Short descriptive headline]**
-[What you found + what it suggests.]
+**Point de vue n° 2: [Analyse N-1 (2017 vs 2016)]**
+En 2017, les ventes progressent de 20,2 % et le profit de 14,7 %, ce qui fait reculer la marge de 0,6 point (12,81 %). La croissance semble donc obtenue au détriment de la rentabilité, peut-être à cause des remises ou d'une hausse des coûts. Par catégorie, Technology et Office Supplies progressent, alors que Furniture recule (3 K€ en 2017 contre 7 K€ en 2016) et fragilise le résultat global. Par région, West (44 K€ contre 24 K€) et East (33 K€ contre 20 K€) progressent, tandis que South (9 K€ contre 18 K€) et Central (8 K€ contre 20 K€) reculent : ces deux régions rencontrent un problème absent à l'Ouest et à l'Est, dont les causes restent à identifier. Par segment, Consumer (45,6 K€ contre 35,8 K€) et Home Office (21,1 K€ contre 15,0 K€) progressent, tandis que Corporate est le seul à baisser (27 K€ contre 31 K€), ce qui oriente l'analyse vers un segment précis. Côté marge, Labels, Paper et Envelopes affichent les valeurs les plus élevées et peuvent servir de référence de rentabilité.
 
-**Insight 3: [Short descriptive headline]**
-[What you found + what it suggests.]
-
-**Insight 4 (if applicable): [Short descriptive headline]**
-[What you found + what it suggests.]
+**Point de vue n° 3: [Détail produit]**
+Au-delà de 40 % de remise, le profit est de -0,12 M€ : les fortes remises détruisent de la valeur, et un plafond de remise est une piste directe. Tables (-8,39 %), Bookcases (-3,02 %) et Supplies (-2,55 %) ont une marge négative. Tables et Bookcases réalisent pourtant des ventes élevées (206 K€ et 115 K€), ce qui laisse penser que la demande existe mais qu'elle est obtenue à des conditions non rentables. La remise est une cause possible, avec une moyenne de 26 % pour Tables et 21 % pour Bookcases, mais pas la seule : Binders a une remise moyenne de 37 % et reste rentable. Par ailleurs, 26,31 % des lignes de commande sont déficitaires, ce qui indique que les pertes sont fréquentes et que le problème semble structurel. À l'inverse, Labels affiche la meilleure marge (44,42 %), preuve qu'une forte rentabilité est possible dans cette activité.
 
 ---
 
@@ -369,13 +366,13 @@ J'ai ensuite voulu vérifier une hypothèse : les remises élevées font-elles p
 
 | Priority | Recommendation | Based On | Suggested Owner |
 |----------|---------------|----------|-----------------|
-| High | [Specific, actionable step] | [Insight it comes from] | [Who should act] |
-| Medium | [Specific, actionable step] | [Insight it comes from] | [Who should act] |
+| High | [Encadrer la politique de remise en plafonnant les taux et en surveillant en priorité les ventes au-delà de 40 % | Point de vue n° 3 - Détail produit | [Who should act] |
+| Medium | Suivre la marge et pas seulement le chiffre d'affaires |Point de vue n° 2 Analyse N-1 (2017 vs 2016)| [Who should act] |
 | Low | [Exploratory or longer-term suggestion] | [Insight it comes from] | [Who should act] |
 
 ---
 
-## 11. Assumptions & Limitations
+## 11. Hypothèses et limites
 
 <!--
   WHAT GOOD LOOKS LIKE:
@@ -397,17 +394,14 @@ J'ai ensuite voulu vérifier une hypothèse : les remises élevées font-elles p
 - [What simplifications did you make for scope or feasibility?]
 - [What domain rules or definitions did you accept as given?]
 
-### Limitations
-- [What gaps exist in the data?]
-- [What analysis was out of scope but could affect interpretation?]
-- [What would a more rigorous version of this project include?]
-- [Are there known biases in the data source or collection method?]
+### Limites
+Sample Superstore est un jeu de données public et fictif : les résultats ne reflètent pas une entreprise réelle. L'analyse met en évidence des corrélations et non des causalités, car les coûts, la livraison et les prix ne figurent pas dans les données. Les données sont statiques, sans actualisation automatique.
 
 > *The goal here is pre-emptive Q&A. What would a thoughtful skeptic push back on? Document the answer here, before they ask.*
 
 ---
 
-## 12. Future Enhancements
+## 12. Pistes d'analyse complémentaires
 
 <!--
   WHAT GOOD LOOKS LIKE:
@@ -422,10 +416,9 @@ J'ai ensuite voulu vérifier une hypothèse : les remises élevées font-elles p
   ❌ Listing aspirational features that don't follow logically from the work.
 -->
 
-- [ ] [Enhancement 1 - specific and traceable to a real gap in this project]
-- [ ] [Enhancement 2]
-- [ ] [Enhancement 3]
-- [ ] [Enhancement 4]
+- [ ] [Enhancement 1 - Existe-t-il des périodes où les ventes augmentent mais où le profit diminue ?]
+- [ ] [Enhancement 2 - Quelles sous-catégories ont une marge inférieure à la marge globale de 12,49 % ?]
+- [ ] [Enhancement 3 - Quelles combinaisons Région × Catégorie ont une marge négative, et lesquelles sont les plus rentables ?]
 
 ---
 
