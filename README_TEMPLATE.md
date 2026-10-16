@@ -230,7 +230,7 @@ erDiagram
         int Month
     }
 
-    SAMPLE_SUPERSTORE_CLEAN {
+    SAMPLE_SUPERSTORE {
         int Row_ID PK
         string Order_ID
         date Order_Date FK
