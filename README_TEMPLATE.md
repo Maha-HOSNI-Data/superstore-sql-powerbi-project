@@ -1,20 +1,10 @@
-# [Project Title]
-> *One sentence. What did you analyze, build, or solve - and why does it matter?*
+# Vendre plus, gagner moins ? Impact des remises sur la rentabilité
+> *les ventes à plus de 40 % de remise font perdre de l’argent*
 
 ---
 
-## ⚙️ Project Type Flags
-> *Check what applies. This helps reviewers and collaborators understand the nature of the work at a glance. Delete this block before publishing.*
-
-- [ ] Exploratory Data Analysis (EDA)
-- [ ] SQL Analysis / Querying
-- [ ] Dashboard / Data Visualization
-- [ ] Data Pipeline / ETL
-- [ ] Predictive Modelling / Machine Learning
-- [ ] Data Cleaning / Wrangling
-- [ ] End-to-End (multiple of the above)
-- [ ] Other: ___________
-
+## ⚙️ Indicateurs de type de projet
+> Analyse SQL et Power BI du jeu de données Sample Superstore (2014-2017)
 ---
 
 ## Table of Contents
@@ -35,7 +25,7 @@
 
 ---
 
-## 1. Project Overview
+## 1. Présentation du projet
 
 Un magasin de détail américain voyait ses ventes progresser d'année en année, sans savoir si cette croissance était réellement rentable. Ce projet analyse quatre ans de commandes (2014-2017) réparties sur quatre régions et trois catégories de produits, pour repérer où l'entreprise perd de l'argent et quel rôle jouent les remises. J'ai nettoyé les données en SQL, puis construit dans Power BI un dashboard de trois pages avec des mesures DAX pour comparer les années et isoler les produits déficitaires. L'analyse montre qu'en 2017 les ventes ont gagné 20,2 % mais le profit seulement 14,7 %, et que les ventes à plus de 40 % de remise ont fait perdre 0,12 M€, alors que Supplies, Bookcases et Tables vendent beaucoup sans dégager de marge.
 
@@ -416,9 +406,9 @@ Sample Superstore est un jeu de données public et fictif : les résultats ne re
   ❌ Listing aspirational features that don't follow logically from the work.
 -->
 
-- [ ] [Enhancement 1 - Existe-t-il des périodes où les ventes augmentent mais où le profit diminue ?]
-- [ ] [Enhancement 2 - Quelles sous-catégories ont une marge inférieure à la marge globale de 12,49 % ?]
-- [ ] [Enhancement 3 - Quelles combinaisons Région × Catégorie ont une marge négative, et lesquelles sont les plus rentables ?]
+- [ ] Enhancement 1 - Existe-t-il des périodes où les ventes augmentent mais où le profit diminue ?
+- [ ] Enhancement 2 - Quelles sous-catégories ont une marge inférieure à la marge globale de 12,49 % ?
+- [ ] Enhancement 3 - Quelles combinaisons Région × Catégorie ont une marge négative, et lesquelles sont les plus rentables ?
 
 ---
 
