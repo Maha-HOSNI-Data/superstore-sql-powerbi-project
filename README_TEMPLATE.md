@@ -38,7 +38,7 @@ Un magasin de détail américain voyait ses ventes progresser d'année en année
 **Résultats:** En 2017, les ventes progressent de 20,2 % mais le profit de 14,7 % seulement, donc la marge recule de 0,6 point. Au-delà de 40 % de remise, le profit est de -0,12 M€, et Supplies, Bookcases et Tables vendent beaucoup mais ont une marge négative.
 
 
-## 2. Objectives
+## 2. Objectifs
 
 - **Objectif principal :** Déterminer si la croissance des ventes de l'entreprise est réellement rentable et identifier où elle perd de l'argent.
 - **Objectif secondaire 1 :** Mesurer les performances globales (ventes, profit, marge) et repérer les régions, catégories et segments qui pèsent le plus.
@@ -52,10 +52,10 @@ Un magasin de détail américain voyait ses ventes progresser d'année en année
 
 | Dimension | Details |
 |-----------|---------|
-| **Dans le périmètre** | [Données au niveau des transactions pour les régions West, East, South et Central, de 2014 à 2017. L'analyse porte sur les ventes, le profit, la marge, la remise moyenne et la comparaison 2017 vs 2016, par catégorie, sous-catégorie et segment] |
-| **Hors périmètre** | [Les coûts de livraison, les prix d'achat et les retours produits sont exclus, car ils ne figurent pas dans le jeu de données. Les prévisions pour les années suivantes sont exclues, car elles dépassent l'objectif du projet] |
-| **Période** | [2014 à 2017, avec une comparaison de 2017 par rapport à 2016] |
-| **Granularité** | [Une ligne par produit commandé, agrégée ensuite par région, catégorie, sous-catégorie, segment et année] |
+| **Dans le périmètre** | Données au niveau des transactions pour les régions West, East, South et Central, de 2014 à 2017. L'analyse porte sur les ventes, le profit, la marge, la remise moyenne et la comparaison 2017 vs 2016, par catégorie, sous-catégorie et segment |
+| **Hors périmètre** | Les coûts de livraison, les prix d'achat et les retours produits sont exclus, car ils ne figurent pas dans le jeu de données. Les prévisions pour les années suivantes sont exclues, car elles dépassent l'objectif du projet |
+| **Période** | 2014 à 2017, avec une comparaison de 2017 par rapport à 2016 |
+| **Granularité** | Une ligne par produit commandé, agrégée ensuite par région, catégorie, sous-catégorie, segment et année |
 
 ### Outils & Téchnologies
 
@@ -73,29 +73,15 @@ Un magasin de détail américain voyait ses ventes progresser d'année en année
 ## 4. Structure du dépôt
 
 ```
-[project-root]/
-│
+superstore-discount-profitability-analysis/
 ├── data/
-│   ├── raw/                  # Original, unmodified source data - never edited
-│   ├── processed/            # Cleaned and transformed data
-│   └── external/             # Reference data, lookup tables, third-party files
-│
-│
-├── scripts/                  # Reusable .py, .R, or .sh processing files
-│
-├── queries/                  # SQL files (retain this folder for SQL-heavy projects)
-│   ├── exploratory/          # Ad-hoc or investigative queries
-│   ├── transformations/      # Cleaning and reshaping logic
-│   └── final/                # Production-ready or presentation queries
-│
-├── reports/                  # Final outputs: PDFs, slide decks, Word docs
-│
-├── visuals/                  # Exported charts, dashboard screenshots, ERD diagrams
-│
-├── docs/                     # Data dictionaries, schema notes, reference material
-│
-├── project_metadata.yml      # Machine-readable metadata (optional)
-└── README.md                 # You are here
+│   ├── raw/           # Fichier CSV d'origine
+│   └── processed/     # Données nettoyées
+├── queries/           # Scripts SQL de nettoyage
+├── dashboard/         # Fichier .pbix
+├── visuals/           # Captures des 3 pages, ERD
+├── reports/           # Export PDF du dashboard
+└── README.md
 ```
 
 
@@ -129,7 +115,7 @@ flowchart TD
 
 -->
 
-### Ensemble de données / Table: `[Sample_Superstore]`
+### Ensemble de données / Table: `[Sample_Superstore_clean]`
 
 | Nom du champ | Type de données | Description | Exemple de valeur |
 |------------|-----------|-------------|---------------|
@@ -187,6 +173,7 @@ flowchart TD
 -->
 
 ### Option C - Mermaid Diagram *(renders on GitHub)*
+Modèle simple : une table de faits et une table de dates
 ```mermaid
 erDiagram
     CALENDAR ||--o{ SAMPLE_SUPERSTORE_CLEAN : "Date = Order_Date"
@@ -261,7 +248,7 @@ J'ai ensuite voulu vérifier une hypothèse : les remises élevées font-elles p
 | Lignes à perte | Part des lignes de commande à profit négatif | Mesure la fréquence des ventes à perte  |
 | Remise moyenne | Taux de remise moyen, global et par sous-catégorie | Une remise trop forte réduit directement le profit |
 
-### Méthodes utilisés
+### Méthodes utilisées
 
 - **Statistiques descriptives** : sommes, moyennes et décomptes (ventes, profit, remise moyenne, nombre de commandes et de clients), et ratios dérivés comme la marge et la part de lignes à perte.
 - **Analyse de tendance** : évolution annuelle des ventes et du profit de 2014 à 2017, présentée en courbes.
@@ -325,11 +312,12 @@ Au-delà de 40 % de remise, le profit est de -0,12 M€ : les fortes remises dé
      (This is a placeholder, not a recommendation.)
 -->
 
-| Priority | Recommendation | Based On | Suggested Owner |
+| Priorité | Recommandation | Basée sur | Responsable suggéré |
 |----------|---------------|----------|-----------------|
-| High | [Encadrer la politique de remise en plafonnant les taux et en surveillant en priorité les ventes au-delà de 40 % | Point de vue n° 3 - Détail produit | [Who should act] |
-| Medium | Suivre la marge et pas seulement le chiffre d'affaires |Point de vue n° 2 Analyse N-1 (2017 vs 2016)| [Who should act] |
-| Low | [Exploratory or longer-term suggestion] | [Insight it comes from] | [Who should act] |
+| High | [Encadrer la politique de remise en plafonnant les taux et en surveillant en priorité les ventes au-delà de 40 % | Point de vue n° 3 - Détail produit | Direction commerciale |
+| Moyenne | Suivre la marge et pas seulement le chiffre d'affaires |Point de vue n° 2 Analyse N-1 (2017 vs 2016)| Contrôle de gestion |
+| Moyenne | Investiguer les reculs de 2017 (South, Central, Corporate, Furniture) |Point de vue n° 2 Analyse N-1 (2017 vs 2016)| Directions régionales |
+| Basse | Analyse croisée Région × Catégorie | Point de vue n° 2 Analyse N-1 (2017 vs 2016) | Équipe data |
 
 ---
 
@@ -377,25 +365,26 @@ Sample Superstore est un jeu de données public et fictif : les résultats ne re
   ❌ Listing aspirational features that don't follow logically from the work.
 -->
 
-- [ ] Enhancement 1 - Existe-t-il des périodes où les ventes augmentent mais où le profit diminue ?
-- [ ] Enhancement 2 - Quelles sous-catégories ont une marge inférieure à la marge globale de 12,49 % ?
-- [ ] Enhancement 3 - Quelles combinaisons Région × Catégorie ont une marge négative, et lesquelles sont les plus rentables ?
+- [ ] - Existe-t-il des périodes où les ventes augmentent mais où le profit diminue ?
+- [ ] - Quelles sous-catégories ont une marge inférieure à la marge globale de 12,49 % ?
+- [ ] - Quelles combinaisons Région × Catégorie ont une marge négative, et lesquelles sont les plus rentables ?
 
 ---
 
-## 13. Deliverables
+## 13. Livrables
 
 | Deliverable | Description | Location |
 |-------------|-------------|----------|
-| [Name] | [What it contains] | [`/path/to/file`] |
-| [Name] | [What it contains] | [`/path/to/file`] |
-| [Name] | [What it contains] | [`/path/to/file`] |
+| Dashboard Power BI | Rapport de 3 pages | [`/path/to/file`] |
+| Export PDF | [What it contains] | [`/path/to/file`] |
+| Script de nettoyage SQL| Transformation de la table brute | [`/path/to/file`] |
+| Captures et ERD| Aperçu des pages et du modèle | [`/path/to/file`] |
 
 ---
 
 ## 14. Auteur
 
-**[Maha HOSNI]**
+**Maha HOSNI**
 Data analyst junior
 
 
@@ -405,4 +394,4 @@ Data analyst junior
 ---
 
 *Last updated: [Month YYYY]*
-*If this template helped you, consider starring the repository.*
+
