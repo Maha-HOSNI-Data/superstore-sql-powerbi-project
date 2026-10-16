@@ -162,7 +162,7 @@ flowchart TD
 
 ---
 
-## 7. ERD - Entity Relationship Diagram
+## 7. ERD - Diagramme entité-relation
 ### *(Primarily for SQL Projects - remove this section if not applicable)*
 
 <!--
@@ -185,38 +185,6 @@ flowchart TD
 
   PICK ONE. Don't use all three. Delete the options you don't use.
 -->
-
-### Option A - Embedded Image
-![ERD Diagram](visuals/erd.png)
-*[Brief caption: e.g., "Three-table schema - orders, customers, and products joined on shared IDs."]*
-
----
-
-### Option B - dbdiagram.io Schema Definition
-```
-Table orders {
-  order_id    int     [pk]
-  customer_id int     [ref: > customers.customer_id]
-  product_id  int     [ref: > products.product_id]
-  order_date  date
-  amount      float
-}
-
-Table customers {
-  customer_id int  [pk]
-  region_code string
-  signup_date date
-}
-
-Table products {
-  product_id   int    [pk]
-  category     string
-  unit_price   float
-}
-```
-*Paste this into [dbdiagram.io](https://dbdiagram.io) to view the visual.*
-
----
 
 ### Option C - Mermaid Diagram *(renders on GitHub)*
 ```mermaid
