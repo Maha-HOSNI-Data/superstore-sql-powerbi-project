@@ -222,7 +222,7 @@ Table products {
 ```mermaid
 erDiagram
 
-    CALENDAR ||--o{ SAMPLE_SUPERSTORE_CLEAN : "Date = Order_Date"
+    CALENDAR ||--o{ SAMPLE_SUPERSTORE_CLEAN : "Date = date Order_Date"
 
     CALENDAR {
         date Date PK
