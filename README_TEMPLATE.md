@@ -27,7 +27,7 @@
 
 ## 1. Présentation du projet
 
-Sample Superstore est un jeu de données fictif qui retrace quatre ans de commandes (2014-2017) d'un magasin de détail américain, réparties sur quatre régions, trois catégories de produits et trois segments de clients. Dans ce projet, je me suis demandé si la croissance des ventes était réellement rentable, et où l'entreprise perdait de l'argent, notamment à cause des remises. J'ai nettoyé les données en SQL (MySQL), puis construit dans Power BI un dashboard de trois pages (aperçu général, comparaison 2017 contre 2016, détail produit) avec des mesures DAX. Résultat : en 2017, les ventes progressent de 20,2 % mais le profit de 14,7 % seulement, donc la marge recule de 0,6 point. Les ventes à plus de 40 % de remise font perdre 0,12 M€, et Tables et Bookcases se vendent bien mais ont une marge négative.
+Sample Superstore est un jeu de données fictif qui retrace quatre ans de commandes (2014-2017) d'un magasin de détail américain, réparties sur quatre régions, trois catégories de produits et trois segments de clients. Dans ce projet, je me suis demandé si la croissance des ventes était réellement rentable, et où l'entreprise perdait de l'argent, notamment à cause des remises. J'ai nettoyé les données en SQL (SQL Server Management Studio), puis construit dans Power BI un dashboard de trois pages (aperçu général, comparaison 2017 contre 2016, détail produit) avec des mesures DAX. Résultat : en 2017, les ventes progressent de 20,2 % mais le profit de 14,7 % seulement, donc la marge recule de 0,6 point. Les ventes à plus de 40 % de remise font perdre 0,12 M€, et Tables et Bookcases se vendent bien mais ont une marge négative.
 
 
 ## 2. Objectifs
@@ -55,7 +55,7 @@ Sample Superstore est un jeu de données fictif qui retrace quatre ans de comman
 |----------|-------------|
 | Source des données | Fichier CSV (Sample Superstore) |
 | Stockage | MySQL |
-| Traitement des données | SQL (MySQL Workbench) |
+| Traitement des données | SQL (SSMS: SQL Server Management Studio) |
 | Analyse et calculs | DAX (Power BI) |
 | Visualisation | Power BI |
 | Gestion de versions | Git / GitHub |
@@ -88,8 +88,8 @@ flowchart TD
 ```
 
 1. **Source :** fichier CSV Sample Superstore, un jeu de données public et fictif de ventes (2014-2017).
-2. **Ingestion :** import du fichier dans une table SSMS, puis connexion de Power BI à la table nettoyée.
-3. **Nettoyage :** [écrivez ici ce que vous avez corrigé en SQL, par exemple : doublons, format des dates, valeurs manquantes].
+2. **Ingestion :** import du fichier dans une table SQL Server Management Studio (SSMS), puis connexion de Power BI à la table nettoyée.
+3. **Nettoyage :** Nettoyage des données consiste à supprimer les doublons, vérifier la format des dates et supprimer les valeurs manquantes.
 4. **Transformation :** création d'une table Calendrier, d'une colonne « Tranche remise » et de mesures DAX (marge, ventes et profit N-1, variations).
 5. **Analyse :** comparaison de 2017 avec 2016, marge par sous-catégorie et effet des remises sur le profit.
 6. **Résultat :** un dashboard Power BI de 3 pages, avec les insights et recommandations dans ce README.
