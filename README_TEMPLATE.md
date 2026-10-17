@@ -314,7 +314,7 @@ West (44 K€ contre 24 K€) et East (33 K€ contre 20 K€) progressent, alor
 
 | Priorité | Recommandation | Basée sur | Responsable suggéré |
 |----------|---------------|----------|-----------------|
-| High | Encadrer la politique de remise en plafonnant les taux et en surveillant en priorité les ventes au-delà de 40 % | Point de vue n° 3 - Détail produit | Direction commerciale |
+| Haute | Encadrer la politique de remise en plafonnant les taux et en surveillant en priorité les ventes au-delà de 40 % | Point de vue n° 3 - Détail produit | Direction commerciale |
 | Moyenne | Suivre la marge et pas seulement le chiffre d'affaires |Point de vue n° 2 Analyse N-1 (2017 vs 2016)| Contrôle de gestion |
 | Moyenne | Investiguer les reculs de 2017 (South, Central, Corporate, Furniture) |Point de vue n° 2 Analyse N-1 (2017 vs 2016)| Directions régionales |
 | Basse | Analyse croisée Région × Catégorie | Point de vue n° 2 Analyse N-1 (2017 vs 2016) | Équipe data |
