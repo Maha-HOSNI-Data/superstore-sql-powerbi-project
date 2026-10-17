@@ -81,14 +81,14 @@ superstore-discount-profitability-analysis/
 
 ```mermaid
 flowchart TD
-    A[Fichier CSV Sample Superstore] --> B[Import dans MySQL]
+    A[Fichier CSV Sample Superstore] --> B[Import dans SSMS]
     B --> C[Nettoyage SQL]
     C --> D[Power BI : modèle et mesures DAX]
     D --> E[Dashboard 3 pages, insights, recommandations]
 ```
 
 1. **Source :** fichier CSV Sample Superstore, un jeu de données public et fictif de ventes (2014-2017).
-2. **Ingestion :** import du fichier dans une table MySQL, puis connexion de Power BI à la table nettoyée.
+2. **Ingestion :** import du fichier dans une table SSMS, puis connexion de Power BI à la table nettoyée.
 3. **Nettoyage :** [écrivez ici ce que vous avez corrigé en SQL, par exemple : doublons, format des dates, valeurs manquantes].
 4. **Transformation :** création d'une table Calendrier, d'une colonne « Tranche remise » et de mesures DAX (marge, ventes et profit N-1, variations).
 5. **Analyse :** comparaison de 2017 avec 2016, marge par sous-catégorie et effet des remises sur le profit.
