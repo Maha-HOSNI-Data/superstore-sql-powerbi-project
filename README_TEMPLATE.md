@@ -82,7 +82,7 @@ superstore-discount-profitability-analysis/
 ```mermaid
 flowchart TD
     A[Fichier CSV Sample Superstore] --> B[Import dans MySQL]
-    B --> C[Nettoyage SQL (doublons, formats de dates, valeurs manquantes)]
+    B --> C[Nettoyage SQL]
     C --> D[Power BI : modèle et mesures DAX]
     D --> E[Dashboard 3 pages, insights, recommandations]
 ```
