@@ -3,7 +3,7 @@
 
 ---
 
-## ⚙️ Indicateurs de type de projet
+
 > Analyse SQL et Power BI du jeu de données Sample Superstore (2014-2017)
 ---
 
@@ -15,27 +15,19 @@
 5. [Flux de données](#5-flux-de-données)
 6. [Modèle de données et schéma](#6-modèle-de-données-et-schéma)
 7. [ERD - Diagramme entité-relation](#7-erd--Diagramme-entité-relation) *(SQL projects)*
-8. [Analyse et indicateurs](#8-analyse--et-indicateurs)
+8. [Analyse et indicateurs](#8-analyse-et-indicateurs)
 9. [Points clés](#9-points-clés)
 10. [Recommandations](#10-recommandations)
-11. [Hypothèses et limites](#11-hypothèses--et-limites)
+11. [Hypothèses et limites](#11-hypothèses-et-limites)
 12. [Pistes d'analyse complémentaires)](#12-pistes--d'analyse-complémentaires)
-13. [Deliverables](#13-livrables)
+13. [Livrables](#13-livrables)
 14. [Auteur](#14-auteur)
 
 ---
 
 ## 1. Présentation du projet
 
-Un magasin de détail américain voyait ses ventes progresser d'année en année, sans savoir si cette croissance était réellement rentable. Ce projet analyse quatre ans de commandes (2014-2017) réparties sur quatre régions et trois catégories de produits, pour repérer où l'entreprise perd de l'argent et quel rôle jouent les remises. J'ai nettoyé les données en SQL, puis construit dans Power BI un dashboard de trois pages avec des mesures DAX pour comparer les années et isoler les produits déficitaires. L'analyse montre qu'en 2017 les ventes ont gagné 20,2 % mais le profit seulement 14,7 %, et que les ventes à plus de 40 % de remise ont fait perdre 0,12 M€, alors que Supplies, Bookcases et Tables vendent beaucoup sans dégager de marge.
-
-**Contexte:** Sample Superstore est un jeu de données fictif de ventes d'un magasin de détail américain. Il couvre 3 catégories de produits (Technology, Furniture, Office Supplies), 3 segments de clients et 4 régions, de 2014 à 2017.
-
-**Présentation du problème:** Les ventes progressent, mais l'entreprise est-elle réellement rentable ? Où perd-elle de l'argent, et quel est l'effet des remises ?
-
-**Approche:** J'ai nettoyé les données en SQL (MySQL), puis construit un dashboard Power BI de 3 pages (aperçu général, comparaison 2017 vs 2016, détail produit) avec des mesures DAX.
-
-**Résultats:** En 2017, les ventes progressent de 20,2 % mais le profit de 14,7 % seulement, donc la marge recule de 0,6 point. Au-delà de 40 % de remise, le profit est de -0,12 M€, et Supplies, Bookcases et Tables vendent beaucoup mais ont une marge négative.
+Sample Superstore est un jeu de données fictif qui retrace quatre ans de commandes (2014-2017) d'un magasin de détail américain, réparties sur quatre régions, trois catégories de produits et trois segments de clients. Dans ce projet, je me suis demandé si la croissance des ventes était réellement rentable, et où l'entreprise perdait de l'argent, notamment à cause des remises. J'ai nettoyé les données en SQL (MySQL), puis construit dans Power BI un dashboard de trois pages (aperçu général, comparaison 2017 contre 2016, détail produit) avec des mesures DAX. Résultat : en 2017, les ventes progressent de 20,2 % mais le profit de 14,7 % seulement, donc la marge recule de 0,6 point. Les ventes à plus de 40 % de remise font perdre 0,12 M€, et Tables et Bookcases se vendent bien mais ont une marge négative.
 
 
 ## 2. Objectifs
@@ -57,7 +49,7 @@ Un magasin de détail américain voyait ses ventes progresser d'année en année
 | **Période** | 2014 à 2017, avec une comparaison de 2017 par rapport à 2016 |
 | **Granularité** | Une ligne par produit commandé, agrégée ensuite par région, catégorie, sous-catégorie, segment et année |
 
-### Outils & Téchnologies
+### Outils & Technologies
 
 | Catégories | Outil(s) utilisé(s) |
 |----------|-------------|
@@ -90,7 +82,7 @@ superstore-discount-profitability-analysis/
 ```mermaid
 flowchart TD
     A[Fichier CSV Sample Superstore] --> B[Import dans MySQL]
-    B --> C[Nettoyage SQL]
+    B --> C[Nettoyage SQL (doublons, formats de dates, valeurs manquantes)]
     C --> D[Power BI : modèle et mesures DAX]
     D --> E[Dashboard 3 pages, insights, recommandations]
 ```
@@ -136,15 +128,16 @@ flowchart TD
 | `Category` | Texte | Catégorie du produit : Technology, Furniture ou Office Supplies | Furniture |
 | `Sub_Category` | Texte | Sous-catégorie du produit (17 valeurs) | Bookcases |
 | `Product_Name` | Texte | Nom du produit | Bush Somerset Collection Bookcase |
-| `Sales` | Décimal | Montant des ventes de la ligne (€) | 261.96 |
+| `Sales` | Décimal | Montant des ventes de la ligne ($) | 261.96 |
 | `Quantity` | Entier | Quantité de produits commandés | 2 |
 | `Discount` | Décimal | Remise appliquée, de 0 à 1 (0,2 = 20 %) | 0 |
-| `Profit` | Décimal | Profit de la ligne (€), négatif en cas de vente à perte | 41.91 |
+| `Profit` | Décimal | Profit de la ligne ($), négatif en cas de vente à perte | 41.91 |
+| `Tranche_remise` | Texte | Tranche de remise de la ligne : 1. 0 %, 2. 1-20 %, 3. 21-40 % ou 4. > 40 %. Colonne calculée dans Power BI | 2. 1-20 % |
 > **Row count (approx.):** [X rows]
 > **Date range:** [Start] – [End]
 
 
-
+La table `Calendar` n'existe pas dans les données d'origine : je l'ai créée dans Power BI avec DAX, avec une ligne par date (colonnes Date, Year et Month). Elle est reliée à `Order_Date` et sert surtout aux comparaisons avec l'année précédente (N-1).
 
 ---
 
@@ -172,7 +165,7 @@ flowchart TD
   PICK ONE. Don't use all three. Delete the options you don't use.
 -->
 
-### Option C - Mermaid Diagram *(renders on GitHub)*
+### Mermaid Diagram 
 Modèle simple : une table de faits et une table de dates
 ```mermaid
 erDiagram
@@ -207,7 +200,7 @@ erDiagram
 
 | Relationship | Join Key | Type |
 |-------------|----------|------|
-| `CALENDAR` → `SAMPLE_SUPERSTORE_CLEAN` | `date Date` | One-to-Many |
+| `Calendar[Date]` → `Order_Date` | `date Date` | Un à plusieurs |
 
 
 ---
@@ -245,8 +238,9 @@ J'ai ensuite voulu vérifier une hypothèse : les remises élevées font-elles p
 | Indicateur | Définition | Pourquoi il compte |
 |--------|--------------------------|----------------|
 | Marge | le profit total divisé par le total des ventes  | Part de chaque euro vendu qui devient du profit |
-| Lignes à perte | Part des lignes de commande à profit négatif | Mesure la fréquence des ventes à perte  |
+| Lignes à perte | Part des lignes de commande à profit négatif (26,31 % sur l'ensemble des données, 2014-2017) | Mesure la fréquence des ventes à perte  |
 | Remise moyenne | Taux de remise moyen, global et par sous-catégorie | Une remise trop forte réduit directement le profit |
+
 
 ### Méthodes utilisées
 
@@ -280,14 +274,20 @@ J'ai ensuite voulu vérifier une hypothèse : les remises élevées font-elles p
   Aim for 3–6 insights. Quality over quantity.
 -->
 
-**Point de vue n° 1: [Aperçu général (2014-2017)]**
-La région West génère le profit le plus élevé (108,4 K€) et réalise les ventes les plus élevées (725,5 K€), alors que Central affiche le profit le plus faible (environ 40 K€) et South les ventes les plus faibles (391,0 K€). Les résultats sont donc très inégaux d'une région à l'autre, et les marges plus faibles de Central et South invitent à les surveiller de près. Du côté des produits, Technology réalise le profit le plus élevé (145,5 K€), devant Office Supplies (122,5 K€) et Furniture (18,9 K€), alors que les ventes des trois catégories restent proches (0,72 à 0,84 M€). Furniture semble donc la catégorie la moins rentable. Le segment Consumer pèse le plus en ventes (1,16 M€), devant Corporate (0,71 M€) et Home Office (0,43 M€), ce qui rend l'activité dépendante des particuliers. Enfin, le profit annuel passe de 49,5 K€ en 2014 à 93,9 K€ en 2017 : la tendance est positive, mais il faut vérifier que la marge progresse aussi, ce que montre la page suivante.
+**Point clé 1 : la croissance de 2017 se fait au détriment de la marge.**
+En 2017, les ventes progressent de 20,2 % mais le profit de 14,7 % seulement, donc la marge recule de 0,6 point (12,81 %). L'entreprise vend plus, mais gagne moins sur chaque euro vendu. Les remises sont une explication possible, qui se confirme dans le point 3.
 
-**Point de vue n° 2: [Analyse N-1 (2017 vs 2016)]**
-En 2017, les ventes progressent de 20,2 % et le profit de 14,7 %, ce qui fait reculer la marge de 0,6 point (12,81 %). La croissance semble donc obtenue au détriment de la rentabilité, peut-être à cause des remises ou d'une hausse des coûts. Par catégorie, Technology et Office Supplies progressent, alors que Furniture recule (3 K€ en 2017 contre 7 K€ en 2016) et fragilise le résultat global. Par région, West (44 K€ contre 24 K€) et East (33 K€ contre 20 K€) progressent, tandis que South (9 K€ contre 18 K€) et Central (8 K€ contre 20 K€) reculent : ces deux régions rencontrent un problème absent à l'Ouest et à l'Est, dont les causes restent à identifier. Par segment, Consumer (45,6 K€ contre 35,8 K€) et Home Office (21,1 K€ contre 15,0 K€) progressent, tandis que Corporate est le seul à baisser (27 K€ contre 31 K€), ce qui oriente l'analyse vers un segment précis. Côté marge, Labels, Paper et Envelopes affichent les valeurs les plus élevées et peuvent servir de référence de rentabilité.
+**Point clé 2 : les ventes se ressemblent d'une catégorie à l'autre, pas les profits.**
+Technology, Furniture et Office Supplies réalisent des ventes proches (entre 0,72 et 0,84 M€), mais Technology dégage 145,5 K€ de profit, Office Supplies 122,5 K€ et Furniture seulement 18,9 K€. En 2017, Furniture est aussi la seule catégorie dont le profit recule (3 K€ contre 7 K€ en 2016). C'est donc elle qu'il faut regarder en priorité.
 
-**Point de vue n° 3: [Détail produit]**
-Au-delà de 40 % de remise, le profit est de -0,12 M€ : les fortes remises détruisent de la valeur, et un plafond de remise est une piste directe. Tables (-8,39 %), Bookcases (-3,02 %) et Supplies (-2,55 %) ont une marge négative. Tables et Bookcases réalisent pourtant des ventes élevées (206 K€ et 115 K€), ce qui laisse penser que la demande existe mais qu'elle est obtenue à des conditions non rentables. La remise est une cause possible, avec une moyenne de 26 % pour Tables et 21 % pour Bookcases, mais pas la seule : Binders a une remise moyenne de 37 % et reste rentable. Par ailleurs, 26,31 % des lignes de commande sont déficitaires, ce qui indique que les pertes sont fréquentes et que le problème semble structurel. À l'inverse, Labels affiche la meilleure marge (44,42 %), preuve qu'une forte rentabilité est possible dans cette activité.
+**Point clé 3 : au-delà de 40 % de remise, l'entreprise perd de l'argent.**
+Les ventes à plus de 40 % de remise font perdre 0,12 M€, alors que les ventes sans remise rapportent environ 0,32 M€. En tout, 26,31 % des lignes de commande sont déficitaires : les ventes à perte sont fréquentes, pas accidentelles.
+
+**Point clé 4 : Tables, Bookcases et Supplies perdent de l'argent, et la remise n'explique pas tout.**
+Ces trois sous-catégories ont une marge négative (-8,39 %, -3,02 % et -2,55 %). Tables et Bookcases se vendent pourtant bien (206 K€ et 115 K€ de ventes) : il y a de la demande, mais à des conditions qui ne rapportent rien. Leur remise moyenne (26 % et 21 %) est une piste, mais Binders accorde 37 % de remise en moyenne et reste rentable (marge de 14,86 %). Les prix ou les coûts jouent sans doute aussi un rôle, que ces données ne permettent pas de mesurer.
+
+**Point clé 5 : le recul de 2017 est concentré sur quelques régions et un segment.**
+West (44 K€ contre 24 K€) et East (33 K€ contre 20 K€) progressent, alors que South (9 K€ contre 18 K€) et Central (8 K€ contre 20 K€) reculent de moitié ou plus. Côté segments, Consumer et Home Office progressent, mais Corporate baisse (27 K€ contre 31 K€). Ce n'est donc pas toute l'entreprise qui ralentit, et c'est là qu'il faut chercher les causes.
 
 ---
 
@@ -314,7 +314,7 @@ Au-delà de 40 % de remise, le profit est de -0,12 M€ : les fortes remises dé
 
 | Priorité | Recommandation | Basée sur | Responsable suggéré |
 |----------|---------------|----------|-----------------|
-| High | [Encadrer la politique de remise en plafonnant les taux et en surveillant en priorité les ventes au-delà de 40 % | Point de vue n° 3 - Détail produit | Direction commerciale |
+| High | Encadrer la politique de remise en plafonnant les taux et en surveillant en priorité les ventes au-delà de 40 % | Point de vue n° 3 - Détail produit | Direction commerciale |
 | Moyenne | Suivre la marge et pas seulement le chiffre d'affaires |Point de vue n° 2 Analyse N-1 (2017 vs 2016)| Contrôle de gestion |
 | Moyenne | Investiguer les reculs de 2017 (South, Central, Corporate, Furniture) |Point de vue n° 2 Analyse N-1 (2017 vs 2016)| Directions régionales |
 | Basse | Analyse croisée Région × Catégorie | Point de vue n° 2 Analyse N-1 (2017 vs 2016) | Équipe data |
@@ -338,10 +338,10 @@ Au-delà de 40 % de remise, le profit est de -0,12 M€ : les fortes remises dé
      analytical maturity - not a confession of failure.
 -->
 
-### Assumptions
-- [What did you treat as true without being able to verify?]
-- [What simplifications did you make for scope or feasibility?]
-- [What domain rules or definitions did you accept as given?]
+### Hypothèses
+- J’ai affiché « n.s. » (non significatif) quand le profit de l’année précédente était négatif, parce qu’un pourcentage de variation n’a plus de sens dans ce cas.
+- J’ai gardé les lignes à profit négatif, parce que je les ai considérées comme de vraies ventes à perte et pas comme des erreurs.
+- J’ai calculé la marge sur les totaux (profit total divisé par ventes totales), et pas en faisant la moyenne des marges de chaque ligne.
 
 ### Limites
 Sample Superstore est un jeu de données public et fictif : les résultats ne reflètent pas une entreprise réelle. L'analyse met en évidence des corrélations et non des causalités, car les coûts, la livraison et les prix ne figurent pas dans les données. Les données sont statiques, sans actualisation automatique.
@@ -365,9 +365,9 @@ Sample Superstore est un jeu de données public et fictif : les résultats ne re
   ❌ Listing aspirational features that don't follow logically from the work.
 -->
 
-- [ ] - Existe-t-il des périodes où les ventes augmentent mais où le profit diminue ?
-- [ ] - Quelles sous-catégories ont une marge inférieure à la marge globale de 12,49 % ?
-- [ ] - Quelles combinaisons Région × Catégorie ont une marge négative, et lesquelles sont les plus rentables ?
+- [ ] - Rechercher les périodes où les ventes augmentent alors que le profit baisse .
+- [ ] - Identifiez et analysez les sous-catégories dont la marge bénéficiaire est inférieure à la marge globale de 12,49 %.
+- [ ] - Analyser les combinaisons Région × Catégorie pour repérer celles qui ont une marge négative et celles qui sont les plus rentables, afin de cibler les actions correctives et de s’appuyer sur les combinaisons performantes.
 
 ---
 
@@ -393,5 +393,4 @@ Data analyst junior
 
 ---
 
-*Last updated: [Month YYYY]*
 
