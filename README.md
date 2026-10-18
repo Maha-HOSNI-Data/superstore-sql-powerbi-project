@@ -54,7 +54,7 @@ Sample Superstore est un jeu de données fictif qui retrace quatre ans de comman
 | Catégories | Outil(s) utilisé(s) |
 |----------|-------------|
 | Source des données | Fichier CSV (Sample Superstore) |
-| Stockage | MySQL |
+| Stockage | SQL (SSMS: SQL Server Management Studio) |
 | Traitement des données | SQL (SSMS: SQL Server Management Studio) |
 | Analyse et calculs | DAX (Power BI) |
 | Visualisation | Power BI |
