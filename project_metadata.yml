@@ -6,24 +6,26 @@
 # ============================================================
 
 project:
-  name: "[Project Title]"
-  slug: "[project-title-lowercase-hyphenated]"   # Used for folder names, URLs
+  name: "Vendre plus, gagner moins ? Impact des remises sur la rentabilité"
+  slug: "superstore-sql-powerbi-project"
   version: "1.0.0"
-  status: "completed"                             # Options: in-progress | completed | archived
-  last_updated: "YYYY-MM-DD"
+  status: "completed"                             # in-progress | completed | archived
+  last_updated: "2026-10-18"
 
 author:
-  name: "[Your Full Name]"
-  role: "[Your Role or Title]"
-  github: "[github_username]"
-  linkedin: "[linkedin_profile_url]"
-  email: "[optional]"
+  name: "Maha Hosni"
+  role: "Data analyste junior"
+  github: "Maha-portfolio"
+  linkedin: "https://www.linkedin.com/in/votre-profil"   # A VERIFIER : mettez votre vrai lien, ou supprimez la ligne
+  
 
 project_type:
-  primary: "[e.g., exploratory-analysis]"        # See taxonomy below
+  primary: "dashboard"
   secondary:
-    - "[e.g., dashboard]"
-    - "[e.g., data-pipeline]"
+    - "sql-analysis"
+    - "data-cleaning"
+
+domain: "retail"
 
 # PROJECT TYPE TAXONOMY (pick what applies):
 # exploratory-analysis | sql-analysis | dashboard | data-pipeline
@@ -34,39 +36,44 @@ domain: "[e.g., finance / healthcare / marketing / operations / education / othe
 
 tools:
   languages:
-    - "[e.g., Python 3.11]"
-    - "[e.g., SQL]"
-  libraries:
-    - "[e.g., pandas 2.0]"
-    - "[e.g., matplotlib 3.7]"
+    - "SQL"
+    - "DAX"
   platforms:
-    - "[e.g., GitHub]"
-    - "[e.g., Google Colab]"
+    - "SQL Server"                                     
+    - "GitHub"
   visualization:
-    - "[e.g., Power BI]"
-    - "[e.g., Tableau]"
-    - "[e.g., Plotly]"
+    - "Power BI"
+
 
 data:
   sources:
-    - name: "[Source name]"
-      type: "[csv / api / database / web-scrape / manual / public-dataset]"
-      access: "[public / private / simulated / anonymized]"
-  row_count_approx: "[e.g., 50000]"
+    - name: "Sample Superstore"
+      type: "csv"
+      access: "public"
+  row_count_approx: "9994"                        
   date_range:
-    start: "YYYY-MM-DD"
-    end: "YYYY-MM-DD"
-
+    start: "2014-01-03"                          
+    end: "2017-12-30"   
+    
 outputs:
-  - type: "[notebook / dashboard / report / csv / script / slides]"
-    path: "[relative/path/to/output]"
-    description: "[One-line description]"
+  - type: "dashboard"
+    path: "dashboard/nom_du_fichier.pbix"
+    description: "Dashboard Power BI de 3 pages : aperçu général, analyse N-1, détail produit"
+  - type: "report"
+    path: "reports/superstore_dashboard.pdf"
+    description: "Export PDF du dashboard"
+  - type: "script"
+    path: "queries/transformations/SQLTransformation.sql"
+    description: "Script SQL de nettoyage de la table brute"
 
 dependencies:
   file: "[requirements.txt / environment.yml / packages.R / none]"
   notes: "[Any setup instructions or environment caveats]"
 
 tags:
-  - "[keyword-1]"
-  - "[keyword-2]"
-  - "[keyword-3]"
+  - "power-bi"
+  - "sql"
+  - "dax"
+  - "data-analysis"
+  - "retail-analytics"
+  - "discount-analysis"
