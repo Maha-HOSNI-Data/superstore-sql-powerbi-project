@@ -27,7 +27,7 @@
 
 ## 1. Présentation du projet
 
-Sample Superstore est un jeu de données fictif qui retrace quatre ans de commandes (2014-2017) d'un magasin de détail américain, réparties sur quatre régions, trois catégories de produits et trois segments de clients. Dans ce projet, je me suis demandé si la croissance des ventes était réellement rentable, et où l'entreprise perdait de l'argent, notamment à cause des remises. J'ai nettoyé les données en SQL (SQL Server Management Studio), puis construit dans Power BI un dashboard de trois pages (aperçu général, comparaison 2017 contre 2016, détail produit) avec des mesures DAX. Résultat : en 2017, les ventes progressent de 20,2 % mais le profit de 14,7 % seulement, donc la marge recule de 0,6 point. Les ventes à plus de 40 % de remise font perdre 0,12 M€, et Tables et Bookcases se vendent bien mais ont une marge négative.
+Sample Superstore est un jeu de données fictif qui retrace quatre ans de commandes (2014-2017) d'un magasin de détail américain, réparties sur quatre régions, trois catégories de produits et trois segments de clients. Dans ce projet, je me suis demandé si la croissance des ventes était réellement rentable, et où l'entreprise perdait de l'argent, notamment à cause des remises. J'ai nettoyé les données en SQL (SQL Server Management Studio), puis construit dans Power BI un dashboard de trois pages (aperçu général, comparaison 2017 contre 2016, détail produit) avec des mesures DAX. Résultat : en 2017, les ventes progressent de 20,2 % mais le profit de 14,7 % seulement, donc la marge recule de 0,6 point. Les ventes à plus de 40 % de remise font perdre 0,12 M$, et Tables et Bookcases se vendent bien mais ont une marge négative.
 
 
 ## 2. Objectifs
@@ -278,16 +278,16 @@ J'ai ensuite voulu vérifier une hypothèse : les remises élevées font-elles p
 En 2017, les ventes progressent de 20,2 % mais le profit de 14,7 % seulement, donc la marge recule de 0,6 point (12,81 %). L'entreprise vend plus, mais gagne moins sur chaque euro vendu. Les remises sont une explication possible, qui se confirme dans le point 3.
 
 **Point clé 2 : les ventes se ressemblent d'une catégorie à l'autre, pas les profits.**
-Technology, Furniture et Office Supplies réalisent des ventes proches (entre 0,72 et 0,84 M€), mais Technology dégage 145,5 K€ de profit, Office Supplies 122,5 K€ et Furniture seulement 18,9 K€. En 2017, Furniture est aussi la seule catégorie dont le profit recule (3 K€ contre 7 K€ en 2016). C'est donc elle qu'il faut regarder en priorité.
+Technology, Furniture et Office Supplies réalisent des ventes proches (entre 0,72 et 0,84 M€), mais Technology dégage 145,5 K€ de profit, Office Supplies 122,5 K$ et Furniture seulement 18,9 K$. En 2017, Furniture est aussi la seule catégorie dont le profit recule (3 K$ contre 7 K$ en 2016). C'est donc elle qu'il faut regarder en priorité.
 
 **Point clé 3 : au-delà de 40 % de remise, l'entreprise perd de l'argent.**
-Les ventes à plus de 40 % de remise font perdre 0,12 M€, alors que les ventes sans remise rapportent environ 0,32 M€. En tout, 26,31 % des lignes de commande sont déficitaires : les ventes à perte sont fréquentes, pas accidentelles.
+Les ventes à plus de 40 % de remise font perdre 0,12 M$, alors que les ventes sans remise rapportent environ 0,32 M$. En tout, 26,31 % des lignes de commande sont déficitaires : les ventes à perte sont fréquentes, pas accidentelles.
 
 **Point clé 4 : Tables, Bookcases et Supplies perdent de l'argent, et la remise n'explique pas tout.**
-Ces trois sous-catégories ont une marge négative (-8,39 %, -3,02 % et -2,55 %). Tables et Bookcases se vendent pourtant bien (206 K€ et 115 K€ de ventes) : il y a de la demande, mais à des conditions qui ne rapportent rien. Leur remise moyenne (26 % et 21 %) est une piste, mais Binders accorde 37 % de remise en moyenne et reste rentable (marge de 14,86 %). Les prix ou les coûts jouent sans doute aussi un rôle, que ces données ne permettent pas de mesurer.
+Ces trois sous-catégories ont une marge négative (-8,39 %, -3,02 % et -2,55 %). Tables et Bookcases se vendent pourtant bien (206 K$ et 115 K$ de ventes) : il y a de la demande, mais à des conditions qui ne rapportent rien. Leur remise moyenne (26 % et 21 %) est une piste, mais Binders accorde 37 % de remise en moyenne et reste rentable (marge de 14,86 %). Les prix ou les coûts jouent sans doute aussi un rôle, que ces données ne permettent pas de mesurer.
 
 **Point clé 5 : le recul de 2017 est concentré sur quelques régions et un segment.**
-West (44 K€ contre 24 K€) et East (33 K€ contre 20 K€) progressent, alors que South (9 K€ contre 18 K€) et Central (8 K€ contre 20 K€) reculent de moitié ou plus. Côté segments, Consumer et Home Office progressent, mais Corporate baisse (27 K€ contre 31 K€). Ce n'est donc pas toute l'entreprise qui ralentit, et c'est là qu'il faut chercher les causes.
+West (44 K$ contre 24 K$) et East (33 K$ contre 20 K$) progressent, alors que South (9 K$ contre 18 K$) et Central (8 K$ contre 20 K$) reculent de moitié ou plus. Côté segments, Consumer et Home Office progressent, mais Corporate baisse (27 K$ contre 31 K$). Ce n'est donc pas toute l'entreprise qui ralentit, et c'est là qu'il faut chercher les causes.
 
 ---
 
