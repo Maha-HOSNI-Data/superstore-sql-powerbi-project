@@ -378,7 +378,7 @@ Sample Superstore est un jeu de données public et fictif : les résultats ne re
 | Dashboard Power BI (aperçu) | Captures des 3 pages du rapport | [Page 1](<visuals/page1/Apeçu général.PNG>) · [Page 2](<visuals/page2/Analyse_N-1.PNG>) · [Page 3](<visuals/page3/Détail produit.PNG>) |
 | Export PDF | [What it contains] | [`/path/to/file`] |
 | Script de nettoyage SQL| Transformation de la table brute | [`queries/transformations/SQLTransformation.sql`](queries/transformations/SQLTransformation.sql) |
-| ERD (diagramme entité-relation) | Schéma du modèle : table de faits et table de dates | [Section 7 de ce README](#7-erd-diagramme-entité-relation) |
+| ERD (diagramme entité-relation) | Schéma du modèle : table de faits et table de dates | [Section 7 de ce README](#7-erd---diagramme-entité-relation)) |
 
 ---
 
