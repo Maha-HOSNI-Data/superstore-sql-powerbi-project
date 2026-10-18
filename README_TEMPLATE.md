@@ -89,7 +89,7 @@ flowchart TD
 
 1. **Source :** fichier CSV Sample Superstore, un jeu de données public et fictif de ventes (2014-2017).
 2. **Ingestion :** import du fichier dans une table SQL Server Management Studio (SSMS), puis connexion de Power BI à la table nettoyée.
-3. **Nettoyage :** Nettoyage des données consiste à supprimer les doublons, vérifier la format des dates et supprimer les valeurs manquantes.
+3. **Nettoyage :** Nettoyage des données consiste à supprimer les doublons, vérifier la format des dates et supprimer les valeurs manquantes, le nombre du lignes au début était de 9 994 et après le nettoyage j'ai supprimé une ligne où le profit.
 4. **Transformation :** création d'une table Calendrier, d'une colonne « Tranche remise » et de mesures DAX (marge, ventes et profit N-1, variations).
 5. **Analyse :** comparaison de 2017 avec 2016, marge par sous-catégorie et effet des remises sur le profit.
 6. **Résultat :** un dashboard Power BI de 3 pages, avec les insights et recommandations dans ce README.
@@ -133,8 +133,8 @@ flowchart TD
 | `Discount` | Décimal | Remise appliquée, de 0 à 1 (0,2 = 20 %) | 0 |
 | `Profit` | Décimal | Profit de la ligne ($), négatif en cas de vente à perte | 41.91 |
 | `Tranche_remise` | Texte | Tranche de remise de la ligne : 1. 0 %, 2. 1-20 %, 3. 21-40 % ou 4. > 40 %. Colonne calculée dans Power BI | 2. 1-20 % |
-> **Row count (approx.):** [X rows]
-> **Date range:** [Start] – [End]
+> **Row count (approx.):** [9 993]
+> **Date range:** [03-01-2014] – [30-12-2017]
 
 
 La table `Calendar` n'existe pas dans les données d'origine : je l'ai créée dans Power BI avec DAX, avec une ligne par date (colonnes Date, Year et Month). Elle est reliée à `Order_Date` et sert surtout aux comparaisons avec l'année précédente (N-1).
