@@ -14,7 +14,7 @@
 4. [Structure du dépôt](#4-structure-du-dépôt)
 5. [Flux de données](#5-flux-de-données)
 6. [Modèle de données et schéma](#6-modèle-de-données-et-schéma)
-7. [ERD - Diagramme entité-relation](#7-erd-Diagramme-entité-relation) *(SQL projects)*
+7. [ERD - Diagramme entité-relation](#7-erd-diagramme-entité-relation) *(SQL projects)*
 8. [Analyse et indicateurs](#8-analyse-et-indicateurs)
 9. [Points clés](#9-points-clés)
 10. [Recommandations](#10-recommandations)
