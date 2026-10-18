@@ -375,7 +375,6 @@ Sample Superstore est un jeu de données public et fictif : les résultats ne re
 
 | Deliverable | Description | Location |
 |-------------|-------------|----------|
-| Dashboard Power BI | Rapport de 3 pages | [`/path/to/file`] |
 | Dashboard Power BI (aperçu) | Captures des 3 pages du rapport | [Page 1](<visuals/page1/Apeçu général.PNG>) · [Page 2](<visuals/page2/Analyse_N-1.PNG>) · [Page 3](<visuals/page3/Détail produit.PNG>) |
 | Export PDF | [What it contains] | [`/path/to/file`] |
 | Script de nettoyage SQL| Transformation de la table brute | [`queries/transformations/SQLTransformation.sql`](queries/transformations/SQLTransformation.sql) |
