@@ -388,7 +388,7 @@ Sample Superstore est un jeu de données public et fictif : les résultats ne re
 Data analyst junior
 
 
-- 💼 [GitHub](https://github.com/Maha-portfolio)
+- 💼 [GitHub](https://github.com/Maha-HOSNI-Data)
 
 
 ---
